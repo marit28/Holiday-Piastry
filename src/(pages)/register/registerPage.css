@@ -1,0 +1,81 @@
+/* registerPage.css */
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.background-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/gym_bg2.jpg') center/cover no-repeat;
+  background-color: rgba(70, 80, 100, 0.7);
+  background-blend-mode: multiply;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 400px; /* Limit the width of the form */
+  padding: 32px;
+  border-radius: 12px; /* Make the corners rounder */
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  text-align: center;
+  margin-top: 50px; /* Add space from the top */
+  margin-bottom: 50px;
+  animation: fadeIn 0.5s ease-out; /* Add fade-in effect */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-title {
+  margin-bottom: 24px; /* Increase bottom margin */
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333; /* Darker color for the title */
+}
+
+.link {
+  color: #1e40af;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.register-button {
+  margin-top: 24px; /* Add space on top of the button */
+  padding: 12px;
+  font-weight: bold;
+  background-color: #1e40af;
+  color: white;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #1e40af;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-footer {
+  margin-top: 24px; /* Add more space below */
+  color: rgba(70, 80, 100, 0.9);
+  font-size: 0.875rem;
+}

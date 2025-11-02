@@ -1,0 +1,45 @@
+/* ===== Base reset (พอและปลอดภัย) ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+/* ห้ามใช้ flex/center ที่ body — ปล่อยให้ layout ของ React จัดการเอง */
+body {
+  margin: 0;
+  background: #fff;
+  /* กันล้นแนวนอนทุกหน้าแบบสมัยใหม่ */
+  overflow-x: clip;             /* clip ดีกว่า hidden */
+}
+
+/* แนะนำให้คงสกอร์ลบาร์ไว้เสมอ เพื่อตัด gutter (แถบว่างขวา) */
+html {
+  overflow-x: clip;
+  overflow-y: scroll;           /* มี scrollbar ตลอด → ไม่มี gutter กระตุก */
+  scrollbar-gutter: stable;     /* กัน layout shift เวลาเกิด/หาย scrollbar */
+  background: #fff;             /* พื้นหลัง root */
+}
+
+/* ลิงก์/ปุ่ม: เอาสตายล์เดโมของ Vite ออกไปทั้งหมด (ถ้าต้องใช้ คุมผ่าน MUI แทน) */
+
+/* ===== Fix MUI Rating (ไม่ให้ข้อความซ่อนดันกว้าง) ===== */
+.MuiRating-visuallyHidden {
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+.MuiRating-root {
+  overflow-x: clip; /* กันพลาดในบริเวณรีวิว */
+}
